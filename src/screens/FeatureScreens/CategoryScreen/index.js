@@ -7,6 +7,7 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 import TopHeader from 'src/components/layouts/TopHeader';
 import {fetchCategory} from 'src/service/apiService';
 import ImageResize from 'src/utils';
+import ApiService from 'src/api';
 const CategoryScreen = ({onSelectItem, onReset}) => {
   const navigation = useNavigation();
   const [category, setCategory] = useState([]);
@@ -25,7 +26,16 @@ const CategoryScreen = ({onSelectItem, onReset}) => {
     setIdSelect(null);
     onReset(false);
   };
-
+  const onDelete = async () => {
+    const result = await ApiService.delete(`categories/${idSelect}`);
+    if (result === 204) {
+      setCategory(category.filter(item => item.id !== idSelect));
+      setIdSelect(null);
+      alert('Xóa thành công');
+    } else {
+      alert('Có lỗi xảy ra');
+    }
+  }
   const actionSelectItem = item => {
     if (isSelectItem && idSelect > 0) {
       if (key === 'edit') {
@@ -37,7 +47,7 @@ const CategoryScreen = ({onSelectItem, onReset}) => {
             onPress: () => resetState(),
             style: 'cancel',
           },
-          {text: 'OK', onPress: () => setIdSelect(null)},
+          { text: 'OK', onPress: () => onDelete() },
         ]);
       }
     } else if (isSelectItem) {
@@ -173,6 +183,5 @@ const styles = StyleSheet.create({
     color: '#fff',
     marginTop: 10,
     textAlign: 'center',
-    wordWrap: 'break-word',
   },
 });

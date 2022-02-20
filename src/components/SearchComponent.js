@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { View, StyleSheet, Dimensions, Platform, FlatList, Text } from 'react-native';
-import { SearchBar, Divider } from 'react-native-elements';
+import React from 'react';
+import { Dimensions, Platform, StyleSheet, View } from 'react-native';
+import { SearchBar } from 'react-native-elements';
 const widthWindow = Dimensions.get('window').width;
 
 const SearchComponent = ({ updateSearch, search, placeholder }) => {

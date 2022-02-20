@@ -2,6 +2,7 @@ import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {Icon} from 'react-native-elements';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const TopHeader = ({name, ...props}) => {
   const navigation = useNavigation();
@@ -20,8 +21,12 @@ const TopHeader = ({name, ...props}) => {
             <Text style={styles.headerTitle}>{name}</Text>
           </View>
           <View style={styles.iconItems}>
-            <Icon name="search" type="feather" color="#fff" size={30} />
-            <Icon name="user" type="entypo" color="#fff" size={30} />
+            <TouchableOpacity onPress={() => navigation.navigate('Search')}>
+              <Icon name="search" type="feather" color="#fff" size={30} />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Tài khoản')}>
+              <Icon name="user" type="entypo" color="#fff" size={30} />
+            </TouchableOpacity>
           </View>
         </View>
       </View>

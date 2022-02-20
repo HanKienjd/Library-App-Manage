@@ -33,7 +33,7 @@ const BookScreen = ({route, navigation}) => {
     } else {
       fetchDataListBooks();
     }
-  }, [id]);
+  }, [id, navigation]);
 
   const _renderItems = ({item}) => {
     return (
@@ -95,6 +95,5 @@ const styles = StyleSheet.create({
     color: '#fff',
     marginTop: 10,
     textAlign: 'center',
-    wordWrap: 'break-word',
   },
 });

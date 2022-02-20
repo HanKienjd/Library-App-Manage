@@ -19,9 +19,6 @@ const TopHeaderCustom = ({name, ...props}) => {
             />
             <Text style={styles.headerTitle}>{name}</Text>
           </View>
-          {/* <View>
-            <Text style={styles.textSave}>Lưu</Text>
-          </View> */}
         </View>
       </View>
     </View>

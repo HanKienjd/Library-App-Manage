@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import { View, Text, FlatList, Image, TouchableOpacity } from 'react-native';
-import { Divider, Icon } from 'react-native-elements';
 import { useNavigation } from '@react-navigation/native';
-import styles from './styles';
+import React, { useEffect, useState } from 'react';
+import { FlatList, Image, Text, TouchableOpacity, View } from 'react-native';
+import { Icon } from 'react-native-elements';
 import { apiSearch } from 'src/api/apiSearch';
 import SearchComponent from 'src/components/SearchComponent';
 import ImageResize from 'src/utils';
+import styles from './styles';
 function SearchScreen() {
     const [search, setSearch] = useState('');
     const [dataSearch, setDataSearch] = useState([]);
-    console.log('🚀 ~ file: index.js ~ line 12 ~ SearchScreen ~ dataSearch', dataSearch);
     const updateSearch = async (value) => {
         setSearch(value);
     };

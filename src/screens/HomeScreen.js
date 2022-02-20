@@ -1,21 +1,16 @@
-import React, {useEffect, useState} from 'react';
+import { useNavigation } from '@react-navigation/native';
+import React, { useEffect, useState } from 'react';
 import {
-  Dimensions,
-  Image,
+  Dimensions, FlatList, Image,
   StyleSheet,
-  Text,
-  View,
-  FlatList,
-  TouchableOpacity,
+  Text, TouchableOpacity, View
 } from 'react-native';
-import {Card} from 'react-native-elements';
-import {fetchCategory} from 'src/service/apiService';
-import SearchComponent from '../components/SearchComponent';
-import {getDataBooks} from 'src/api/apiBook';
+import { Card } from 'react-native-elements';
+import { getDataBooks } from 'src/api/apiBook';
+import { fetchCategory } from 'src/service/apiService';
+import ImageResize from 'src/utils';
 const widthWindow = Dimensions.get('window').width;
 const heightWindow = Dimensions.get('window').height;
-import ImageResize from 'src/utils';
-import {useNavigation} from '@react-navigation/native';
 
 function HomeScreen() {
   const navigation = useNavigation();
@@ -68,7 +63,7 @@ function HomeScreen() {
   };
   useEffect(() => {
     fetchListData();
-  }, []);
+  }, [navigation]);
   return (
     <View style={{flex: 1}}>
       <View style={styles.bannerContainer}>
@@ -76,9 +71,6 @@ function HomeScreen() {
           source={require('../static/image/slide.jpeg')}
           style={styles.image}
         />
-        {/* <View style={styles.searchContainer}>
-          <SearchComponent />
-        </View> */}
       </View>
       <View style={styles.mainContainer}>
         <LabelBanner title="New Book" />

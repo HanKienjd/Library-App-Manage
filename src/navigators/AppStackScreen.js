@@ -58,6 +58,7 @@ const HomeStackScreens = () => {
       }}>
       <HomeStack.Screen name="Home" component={HomeScreen} />
       <HomeStack.Screen name="Books" component={BookScreen} />
+      <HomeStack.Screen name="BookDetail" component={BookDetailScreen} />
     </HomeStack.Navigator>
   );
 };
@@ -69,7 +70,7 @@ const BottomTabNavigator = () => {
         tabBarIcon: ({focused, color, size}) => {
           let iconName;
           switch (route.name) {
-            case 'Home':
+            case 'Trang chủ':
               iconName = focused ? 'home' : 'home-outline';
               break;
             case 'Chức năng':
@@ -95,7 +96,7 @@ const BottomTabNavigator = () => {
         tabBarInactiveTintColor: 'gray',
         headerShown: false,
       })}>
-      <Tab.Screen name="Home" component={HomeStackScreens} />
+      <Tab.Screen name="Trang chủ" component={HomeStackScreens} />
       <Tab.Screen name="Chức năng" component={FeatureStackScreens} />
       <Tab.Screen name="Tài liệu" component={DocumentScreen} />
       <Tab.Screen name="Thông báo" component={NotificationScreen} />

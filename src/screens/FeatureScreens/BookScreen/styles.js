@@ -4,6 +4,13 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#F5FCFF',
   },
+  imageUploads: {
+    justifyContent: 'center',
+    margin: 20,
+  },
+  imageItem: {
+    height: 200,
+  },
   uploadContainer: {
     marginHorizontal: 20,
     marginVertical: 10,
