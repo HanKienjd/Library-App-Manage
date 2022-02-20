@@ -9,7 +9,6 @@ import ImageResize from 'src/utils';
 function SearchScreen() {
     const [search, setSearch] = useState('');
     const [dataSearch, setDataSearch] = useState([]);
-    console.log('🚀 ~ file: index.js ~ line 12 ~ SearchScreen ~ dataSearch', dataSearch);
     const updateSearch = async (value) => {
         setSearch(value);
     };
