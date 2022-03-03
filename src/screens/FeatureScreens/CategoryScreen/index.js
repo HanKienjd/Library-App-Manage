@@ -67,7 +67,7 @@ const CategoryScreen = ({onSelectItem, onReset}) => {
         }>
         <TouchableOpacity onPress={() => actionSelectItem(item)}>
           <Card.Image
-            source={{uri: ImageResize(item.image)}}
+            source={{uri: item.image}}
             style={styles.imageBook}
           />
           <Text style={styles.popularBookTitle}>{item.name || ''}</Text>

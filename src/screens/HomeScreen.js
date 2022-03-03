@@ -39,7 +39,7 @@ function HomeScreen() {
           onPress={() => navigation.navigate('BookDetail', {id: item.id})}>
           <Card key={item.id} containerStyle={styles.booksContainer}>
             <Card.Image
-              source={{uri: ImageResize(item.image)}}
+              source={{uri: item.image}}
               style={styles.imageBook}
             />
             <Text style={styles.popularBookTitle}>{item.name || ''}</Text>

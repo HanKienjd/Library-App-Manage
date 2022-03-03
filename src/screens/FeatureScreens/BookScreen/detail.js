@@ -64,7 +64,7 @@ const BookDetailScreen = ({ route }) => {
                     {detailBook && (
                         <View>
                             <Image
-                                source={{ uri: ImageResize(detailBook.image) }}
+                                source={{ uri: detailBook.image }}
                                 containerStyle={styles.imageContainer}
                                 style={styles.image}
                                 onPress={() => console.log('changeImage')}
